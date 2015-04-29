@@ -1,7 +1,7 @@
 # carousel-image
 轮播图片，支持触摸滑动。
 例子见[DEMO](http://www.lovewebgames.com/jsmodule/carousel-image.html)  
-![预览效果:](/example/2.png "点击预览效果")
+![预览效果:](/example/carousel-image.png "点击预览效果")
 #使用方法案例:
 	<script type="text/javascript" src="../src/zepto.js"></script>
 	<script type="text/javascript" src="../src/carousel-image.js"></script>
