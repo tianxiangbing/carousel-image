@@ -1,0 +1,1 @@
+!function(o,e){"function"==typeof define&&define.amd?define("carousel-image",["$"],e):"object"==typeof exports?module.exports=e():o.ScrollLoad=e(window.Zepto||window.jQuery||$)}(this,function(o){function e(){}return console.log(o("body")),e.prototype={init:function(){}},e});

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>图片预览</title>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<link rel="stylesheet" type="text/css" href="../src/carousel-image.css">
+	</head>
+	<body>
+		<div class="carousel-image">
+			<div>
+				<a>
+					<img src="1.png"/>
+				</a>
+				<a>
+					<img src="2.png"/>
+				</a>
+				<a>
+					<img src="3.png"/>
+				</a>
+			</div>
+			<span class="carousel-num">
+			</span>
+		</div>
+		<script type="text/javascript" src="../src/zepto.js"></script>
+		<script type="text/javascript" src="../src/require.js"></script>
+		<script>
+		requirejs.config({
+			//By default load any module IDs from js/lib
+			baseUrl: '../src',
+			paths: {
+				$: 'zepto'
+			}
+		});
+		require(['carousel-image','$'], function(CarouselImage,$) {
+			var cs = new CarouselImage();
+			cs.init({
+				target:$('.carousel-image'),
+				num:$('.carousel-num')
+			});
+		});
+		</script>
+	</body>
+</html>
