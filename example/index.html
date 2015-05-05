@@ -7,7 +7,22 @@
 		<link rel="stylesheet" type="text/css" href="../src/carousel-image.css">
 	</head>
 	<body>
-		<div class="carousel-image">
+		<div class="carousel-image carousel-image1">
+			<div>
+				<a>
+					<img src="1.png"/>
+				</a>
+				<a>
+					<img src="2.png"/>
+				</a>
+				<a>
+					<img src="3.png"/>
+				</a>
+			</div>
+			<span class="carousel-num">
+			</span>
+		</div>
+		<div class="carousel-image carousel-image2">
 			<div>
 				<a>
 					<img src="1.png"/>
@@ -25,8 +40,12 @@
 		<script type="text/javascript" src="../src/zepto.js"></script>
 		<script type="text/javascript" src="../src/carousel-image.js"></script>
 		<script>
-		$('.carousel-image').CarouselImage({
-			num :$('.carousel-num')
+		$('.carousel-image1').CarouselImage({
+			num :$('.carousel-image1 .carousel-num')
+		});
+		$('.carousel-image2').CarouselImage({
+			num :$('.carousel-image2 .carousel-num'),
+			repeat:true
 		});
 		</script>
 	</body>
