@@ -50,7 +50,6 @@
 				var w = this.width;
 				_this.container.height( (_this.container.width()/w) *h);
 			});
-			this.container.height(this.content.height());
 			this.size = this.list.length;
 			this.repeat = settings.repeat || false;
 			if (this.repeat) {
@@ -161,7 +160,7 @@
 				_this.go();
 				move = false;
 				_this.auto();
-				return false;
+				//return false;
 			});
 			_this.touch(_this.num, "i", function() {
 				clearInterval(_this.interval);
