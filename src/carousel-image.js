@@ -76,13 +76,13 @@
 			_this.container.find('img').width(this.container.width());
 			if (settings.width) {
 				this.container.width(settings.width);
-				this.list.find('img').width(settings.width);
+				this.container.find('img').width(settings.width);
 			}
 			this.step = this.container.width();
 			this.content.width(this.list.length * this.step);
 			if (settings.height) {
 				this.container.height(this.container.height());
-				this.list.find('img').height(settings.height);
+				this.container.find('img').height(settings.height);
 			} else {
 				$(img).on('load', function() {
 					var h = this.height;
@@ -90,9 +90,17 @@
 					_this.container.height((_this.container.width() / w) * h);
 					_this.container.find('img').height(_this.container.height());
 					_this.content.width((_this.list.length + 2) * _this.step);
+					_this.content.css({
+						left: -_this.container.width(),
+						position: "absolute"
+					});
 				});
 			}
 			_this.content.width((_this.list.length + 2) * _this.step);
+			_this.content.css({
+				left: -_this.container.width(),
+				position: "absolute"
+			});
 		},
 		touch: function(obj, trigger, fn) {
 			var move;
