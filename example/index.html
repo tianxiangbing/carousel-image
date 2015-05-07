@@ -8,7 +8,7 @@
 	</head>
 	<body>
           <!--scroll-->
-          <div class="scroll_box carousel-image" id="scroll_img">
+          <div class="carousel-image carousel-image2" id="scroll_img">
               <div>
                                                       <a target="_blank" href="http://tt.ewanse.com/search/index?more=0&keywords=Apple%20Watch">
                               <img src="http://ott.wansecheng.com/weidian/advertise/1429860297667.jpg" width="100%" />
@@ -39,12 +39,14 @@
 		<script type="text/javascript" src="../src/zepto.js"></script>
 		<script type="text/javascript" src="../src/carousel-image.js"></script>
 		<script>
-		$('.carousel-image').CarouselImage({
-			num :$('.carousel-image .carousel-num'),
+		$('.carousel-image2').CarouselImage({
+			num :$('.carousel-image2 .carousel-num'),
 			repeat:true
 		});
 		$('.carousel-image1').CarouselImage({
-			num :$('.carousel-image1 .carousel-num')
+			num :$('.carousel-image1 .carousel-num'),
+			width:320,
+			height:240
 		});
 		</script>
 	</body>
