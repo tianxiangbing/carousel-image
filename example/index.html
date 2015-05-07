@@ -36,6 +36,21 @@
 			<span class="carousel-num">
 			</span>
 		</div>
+		<div class="carousel-image carousel-image3" style="width:340px">
+			<div>
+				<a>
+					<img src="1.png"/>
+				</a>
+				<a>
+					<img src="2.png"/>
+				</a>
+				<a>
+					<img src="3.png"/>
+				</a>
+			</div>
+			<span class="carousel-num">
+			</span>
+		</div>
 		<script type="text/javascript" src="../src/zepto.js"></script>
 		<script type="text/javascript" src="../src/carousel-image.js"></script>
 		<script>
@@ -47,6 +62,9 @@
 			num :$('.carousel-image1 .carousel-num'),
 			width:320,
 			height:240
+		});
+		$('.carousel-image3').CarouselImage({
+			num :$('.carousel-image3 .carousel-num')
 		});
 		</script>
 	</body>

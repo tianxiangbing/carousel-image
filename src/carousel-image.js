@@ -53,7 +53,7 @@
 				this.content.append(firstc);
 				this.content.prepend(lastc);
 				this.content.css({
-					left: -this.step,
+					left: -this.container.width(),
 					position: "absolute"
 				});
 			} else {
@@ -71,8 +71,6 @@
 		setHeightWidth: function() {
 			var settings = this.settings;
 			var _this = this;
-			this.step = this.container.width();
-			this.content.width(this.list.length * this.step);
 			var img = new Image();
 			img.src = this.list.first().find('img').attr('src');
 			_this.container.find('img').width(this.container.width());
@@ -80,6 +78,8 @@
 				this.container.width(settings.width);
 				this.list.find('img').width(settings.width);
 			}
+			this.step = this.container.width();
+			this.content.width(this.list.length * this.step);
 			if (settings.height) {
 				this.container.height(this.container.height());
 				this.list.find('img').height(settings.height);
