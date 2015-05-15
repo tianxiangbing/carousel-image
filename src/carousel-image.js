@@ -243,12 +243,14 @@
 				_this.auto();
 			});
 			$(window).resize(function() {
-				_this.content.find('img').css({
-					width: "auto",
-					height: "auto"
-				});
-				_this.go();
-				_this.setHeightWidth();
+				if (!_this.settings.width) {
+					_this.content.find('img').css({
+						width: "auto",
+						height: "auto"
+					});
+					_this.go();
+					_this.setHeightWidth();
+				}
 			});
 		},
 		formatNum: function() {
@@ -306,7 +308,7 @@
 		},
 		auto: function() {
 			var _this = this;
-			if(this.interval){
+			if (this.interval) {
 				_this.stop();
 			}
 			this.interval = setInterval(function() {
