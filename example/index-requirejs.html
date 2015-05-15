@@ -10,13 +10,19 @@
 		<div class="carousel-image">
 			<div>
 				<a>
-					<img src="1.png"/>
+					<img src="a4.png"/>
 				</a>
 				<a>
-					<img src="2.png"/>
+					<img src="a1.png"/>
 				</a>
 				<a>
-					<img src="3.png"/>
+					<img src="a2.png"/>
+				</a>
+				<a>
+					<img src="a3.png"/>
+				</a>
+				<a>
+					<img src="a5.png"/>
 				</a>
 			</div>
 			<span class="carousel-num">
@@ -36,7 +42,11 @@
 			var cs = new CarouselImage();
 			cs.init({
 				target:$('.carousel-image'),
-				num:$('.carousel-num')
+				num:$('.carousel-num'),
+				repeat:true,
+				timer:8000,
+				height:200,
+				width:300
 			});
 		});
 		</script>
