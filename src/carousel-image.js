@@ -38,7 +38,7 @@
 			this.container = settings.target;
 			this.content = this.container.children().first();
 			this.timer = settings.timer || 3000;
-			this.animate = settings.animate || 500;
+			this.animate = settings.animate || 300;
 			this.num = settings.num || null;
 			this.list = this.content.children();
 			this.size = this.list.length;
@@ -226,12 +226,13 @@
 					left: curPos.left + (end.x - start.x)
 				};
 				$(this).css(stopPos);
-				if (end.x > istartleft) {
+				if (end.x > istartleft+10) {
 					_this.index--;
-				} else {
+					_this.go();
+				} else if (end.x < istartleft-10) {
 					_this.index++;
+					_this.go();
 				}
-				_this.go();
 				move = false;
 				_this.auto();
 				//return false;
