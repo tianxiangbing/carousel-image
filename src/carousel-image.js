@@ -188,7 +188,7 @@
 				start = {
 					x: events[0].pageX
 				};
-				if (e.targetTouches.length == 2) {
+				if (events.length == 2) {
 					move = false;
 					return false;
 				};
@@ -197,7 +197,7 @@
 				_this.stop();
 			}).on('touchmove', function(e) {
 				var events =  (e.changedTouches || e.originalEvent.changedTouches);
-				if (e.targetTouches.length == 2) {
+				if (events.length == 2) {
 					return false;
 				}
 				move = true;
