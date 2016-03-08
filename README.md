@@ -59,3 +59,5 @@
 	动画时间
 ##auto:[bool]
 	是否自动轮播,默认为true
+##repeat:[bool]
+	是否无限循环，默认为false
