@@ -7,8 +7,13 @@
  * Contact: 55342775@qq.com
  */
 (function(root, factory) {
-	//amd
-	if (typeof define === 'function' && define.amd) {
+	//cmd
+	if (typeof define === 'function' && define.cmd){
+		define(function(require, exports, module) {
+			var $ = require("$");
+			return factory($);
+		});
+	}else if(typeof define === 'function' && define.amd) {//amd
 		define(['$'], factory);
 	} else if (typeof exports === 'object') { //umd
 		module.exports = factory();
@@ -33,7 +38,7 @@
 	CarouselImage.prototype = {
 		init: function(settings) {
 			var _this = this;
-			this.settings = settings;
+			this.settings = $.extend({auto:true},settings);
 			this.index = 0;
 			this.container = settings.target;
 			this.content = this.container.children().first();
@@ -311,6 +316,9 @@
 			}
 		},
 		auto: function() {
+			if(!this.settings.auto){
+				return;
+			}
 			var _this = this;
 			if (this.interval) {
 				_this.stop();

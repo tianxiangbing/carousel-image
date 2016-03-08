@@ -57,3 +57,5 @@
 	动画延时
 ##animate :
 	动画时间
+##auto:[bool]
+	是否自动轮播,默认为true
