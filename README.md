@@ -61,3 +61,8 @@
 	是否自动轮播,默认为true
 ##repeat:[bool]
 	是否无限循环，默认为false
+
+##changeCallback:function(this)
+	改变时的回调
+##callback:function(this)
+	准备好了的回调
