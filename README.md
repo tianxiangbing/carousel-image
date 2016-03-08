@@ -66,3 +66,5 @@
 	改变时的回调
 ##callback:function(this)
 	准备好了的回调
+##formatNumCallback:function(this)
+	格式化后的回调

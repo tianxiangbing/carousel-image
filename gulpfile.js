@@ -57,4 +57,4 @@ gulp.task('watch',function(){
         gulp.start('default')
     });
 });
-gulp.task('default', ['js', 'css']);
+gulp.task('default', ['js', 'css','requirejs']);
