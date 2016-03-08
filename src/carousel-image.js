@@ -71,6 +71,7 @@
 			this.bindEvent();
 			this.auto();
 			this.formatNum();
+			this.settings.callback&&this.settings.callback.call(this);
 		},
 		setHeightWidth: function() {
 			var settings = this.settings;
@@ -314,6 +315,7 @@
 					_this.formatNum();
 				});
 			}
+			this.settings.changeCallback&&this.settings.changeCallback.call(this);
 		},
 		auto: function() {
 			if(!this.settings.auto){
