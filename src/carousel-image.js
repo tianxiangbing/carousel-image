@@ -275,7 +275,7 @@
 					html += '<i class="' + cls + '">' + (i + 1) + '</i>';
 				};
 				this.num.html(html);
-				this.formatNumCallback&&this.formatNumCallback.call(this);
+				this.settings.formatNumCallback&&this.settings.formatNumCallback.call(this);
 			}
 		},
 		go: function() {
