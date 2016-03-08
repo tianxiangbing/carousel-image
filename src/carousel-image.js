@@ -38,7 +38,7 @@
 	CarouselImage.prototype = {
 		init: function(settings) {
 			var _this = this;
-			this.settings = $.extend({auto:true},settings);
+			this.settings = $.extend({auto:true,resizeImg:true},settings);
 			this.index = 0;
 			this.container = settings.target;
 			this.content = this.container.children().first();
@@ -101,21 +101,23 @@
 			this.container.find('img').each(function() {
 				var img = new Image();
 				img.src = $(this).attr('src');
-				var i = $(this).data('index');;
-				(function(img, i) {
-					if (img.complete) {
-						setObj.call(img, i);
-					} else {
-						img.onreadystatechange = function() {
-							if (this.readystate == "complete" || this.readyState == "loaded") {
+				var i = $(this).data('index');
+				if(_this.settings.resizeImg){
+					(function(img, i) {
+						if (img.complete) {
+							setObj.call(img, i);
+						} else {
+							img.onreadystatechange = function() {
+								if (this.readystate == "complete" || this.readyState == "loaded") {
+									setObj.call(this, i);
+								}
+							}
+							img.onload = function() {
 								setObj.call(this, i);
 							}
 						}
-						img.onload = function() {
-							setObj.call(this, i);
-						}
-					}
-				})(img, i);
+					})(img, i);
+				}
 			});
 
 			function setObj(i) {
