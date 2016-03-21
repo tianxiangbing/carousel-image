@@ -48,7 +48,7 @@
 			this.list = this.content.children();
 			this.size = this.list.length;
 			this.repeat = settings.repeat || false;
-			this.step = this.container.width();
+			this.step = settings.step || this.container.width();
 			if (this.repeat) {
 				var firstc = this.list.first().clone();
 				var lastc = this.list.last().clone();
@@ -81,7 +81,7 @@
 			if (settings.height) {
 				this.container.height(settings.height);
 			}
-			this.step = this.container.width();
+			//this.step = this.container.width();
 			if (settings.repeat) {
 				this.content.width((this.list.length + 2) * this.step);
 			} else {
@@ -93,11 +93,13 @@
 			}
 			var _this = this;
 			//_this.container.find('img').width(this.container.width());
-			this.container.find('a').css({
-				width: this.step,
-				height: this.container.height(),
-				position: 'relative'
-			});
+			if(this.settings.resizeImg){
+				this.container.find('a').css({
+					width: this.step,
+					height: this.container.height(),
+					position: 'relative'
+				});
+			}
 			this.container.find('img').each(function() {
 				var img = new Image();
 				img.src = $(this).attr('src');
