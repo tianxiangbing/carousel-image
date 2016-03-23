@@ -228,7 +228,9 @@
 					$(this).css(curPos);
 				}
 				start = end;
-				return false;
+				if (!_this.bloom && (end.x - start.x)>0) {
+					return false;
+				}
 			}).on('touchend', function(e) {
 				var events =  (e.changedTouches || e.originalEvent.changedTouches);
 				end = {
