@@ -156,7 +156,7 @@
 				var left = (_this.container.width() - iw) / 2;
 				$('.carousel-' + i, c).css({
 					left: left,
-					top: top,
+					//top: top,
 					position: "absolute"
 				});
 			}
@@ -193,10 +193,13 @@
 				end = {},
 				move = false;
 			var curPos = {};
+			var ismove = 0;
 			this.content.on('touchstart', function(e) {
 				var events =  (e.changedTouches || e.originalEvent.changedTouches);
+				ismove=0;
 				start = {
-					x: events[0].pageX
+					x: events[0].pageX,
+					y: events[0].pageY
 				};
 				if (events.length == 2) {
 					move = false;
@@ -212,8 +215,15 @@
 				}
 				move = true;
 				end = {
-					x: events[0].pageX
+					x: events[0].pageX,
+					y: events[0].pageY
 				};
+				if(Math.abs(end.y - start.y)>0 && ismove==0){
+					ismove=2;
+				}
+				if(ismove==2){
+					return;
+				}
 				// var curPos = $(this).position();
 				if (!_this.bloom) {
 					//只移动x轴
@@ -227,10 +237,15 @@
 					}
 					$(this).css(curPos);
 				}
-				start = end;
-				if (!_this.bloom && (end.x - start.x)>0) {
-					return false;
+				console.log(Math.abs(end.x - start.x))
+				if (/*!_this.bloom &&*/ Math.abs(end.x - start.x)>0 && ismove==0) {
+					ismove = 1;
+					//return false;
 				}
+				if(ismove==1){
+					e.preventDefault();
+				}
+				start = end;
 			}).on('touchend', function(e) {
 				var events =  (e.changedTouches || e.originalEvent.changedTouches);
 				end = {
@@ -241,22 +256,26 @@
 					left: curPos.left + (end.x - start.x)
 				};
 				$(this).css(stopPos);
-				if (end.x > istartleft+10) {
+				if (end.x > istartleft+50) {
 					_this.index--;
-					_this.go();
-				} else if (end.x < istartleft-10) {
+					// _this.go();
+				} else if (end.x < istartleft-50) {
 					_this.index++;
-					_this.go();
 				}
+				_this.go();
 				move = false;
 				_this.auto();
-				//return false;
+				console.log("ismove:"+ismove)
+				ismove=0;
 			});
 			_this.touch(_this.num, "i", function() {
 				clearInterval(_this.interval);
 				_this.index = $(this).index();
 				_this.go();
 				_this.auto();
+			});
+			$(window).on('touchend',function(){
+				ismove=0;
 			});
 			$(window).resize(function() {
 				if (!_this.settings.width) {
