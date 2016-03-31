@@ -218,11 +218,19 @@
 					x: events[0].pageX,
 					y: events[0].pageY
 				};
-				if(Math.abs(end.y - start.y)>0 && ismove==0){
+				if(Math.abs(end.y - start.y)>10 && ismove==0){
 					ismove=2;
 				}
 				if(ismove==2){
+					console.log('ismove:'+ismove);
 					return;
+				}
+				if (/*!_this.bloom &&*/ Math.abs(end.x - start.x)>10 && ismove==0) {
+					ismove = 1;
+					//return false;
+				}
+				if(ismove==1){
+					e.preventDefault();
 				}
 				// var curPos = $(this).position();
 				if (!_this.bloom) {
@@ -238,16 +246,13 @@
 					$(this).css(curPos);
 				}
 				console.log(Math.abs(end.x - start.x))
-				if (/*!_this.bloom &&*/ Math.abs(end.x - start.x)>0 && ismove==0) {
-					ismove = 1;
-					//return false;
-				}
-				if(ismove==1){
-					e.preventDefault();
-				}
 				start = end;
 			}).on('touchend', function(e) {
 				var events =  (e.changedTouches || e.originalEvent.changedTouches);
+				if(ismove ==2){
+					console.log('ismove:'+ismove);
+					return;
+				}
 				end = {
 					x: events[0].pageX
 				};
