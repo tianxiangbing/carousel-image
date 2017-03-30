@@ -1,7 +1,13 @@
 # carousel-image
-轮播图片，支持触摸滑动。
+移动端和pc端轮播切换图片
+
+1. 支持移动端触摸滑动。
+2. 支持自定中间放大图片，两侧图片缩小显示。
+3. 支持各种图片的不同尺寸自适应
+
 例子见[DEMO](http://www.lovewebgames.com/jsmodule/carousel-image.html)  
-![预览效果:](http://www.lovewebgames.com/jsmodule/images/ui/carousel-image.png "点击预览效果")
+![预览效果:](docs/demo1.jpg "点击预览效果")
+![预览效果:](docs/demo2.jpg "点击预览效果")
 # 使用方法案例:
 
 	<script type="text/javascript" src="../src/zepto.js"></script>
@@ -15,13 +21,13 @@
 	<div class="carousel-image">
 		<div>
 			<a>
-				<img src="http://ott.wansecheng.com/weidian/wdgoods/1430073193462.jpg"/>
+				<img src="4.jpg"/>
 			</a>
 			<a>
-				<img src="http://ott.wansecheng.com/weidian/wdgoods/1430073252953.png"/>
+				<img src="5.png"/>
 			</a>
 			<a>
-				<img src="http://ott.wansecheng.com/weidian/wdgoods/1430073111420.jpg"/>
+				<img src="6.jpg"/>
 			</a>
 		</div>
 		<div class="carousel-num">
