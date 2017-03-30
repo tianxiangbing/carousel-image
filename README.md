@@ -5,8 +5,10 @@
 2. 支持自定中间放大图片，两侧图片缩小显示。
 3. 支持各种图片的不同尺寸自适应
 
-例子见[DEMO](http://www.lovewebgames.com/jsmodule/carousel-image.html)  
+例子见[DEMO](http://tianxiangbing.github.io/carousel-image/)  
+
 ![预览效果:](docs/demo1.jpg "点击预览效果")
+
 ![预览效果:](docs/demo2.jpg "点击预览效果")
 # 使用方法案例:
 
